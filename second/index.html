@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020914">
+<title>МЕРИДИАМ — интерактивная галерея V18</title>
+<link rel="preload" href="v18-meridiam-light.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="v18-meridiam-regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="v18-styles.css?rev=2"><style>
+body.transition-prepared .gallery,body.transition-prepared .nav,
+body.transition-prepared .communication,body.transition-prepared .mobile-note,
+body.transition-prepared .hint,body.transition-prepared .directions-title{opacity:0}
+body.transition-prepared .gallery{translate:0 28px}
+.gallery{transition:opacity 1.3s ease,translate 1.8s cubic-bezier(.2,.7,.2,1)}
+.nav,.communication,.mobile-note,.hint,.directions-title{transition:opacity 1.4s ease}
+@media(prefers-reduced-motion:reduce){
+ .gallery,.nav,.communication,.mobile-note,.hint,.directions-title{transition:none}
+ body.transition-prepared .gallery{translate:none}
+}
+</style><link rel="stylesheet" href="../shared/contacts.css"><link rel="stylesheet" href="../shared/typography.css"></head><body><main class="stage" id="stage" aria-label="Вторая страница студии МЕРИДИАМ — направления"><div class="sky" aria-hidden="true"></div><div class="stars" aria-hidden="true"></div><div class="floor" aria-hidden="true"></div><div class="orbit-trace" aria-hidden="true"></div>
+<header class="topline">
+  <div class="brand">
+    <h1 class="brand-logo">Меридиам</h1>
+    <div class="brand-sub">
+      <span class="brand-line" aria-hidden="true"></span>
+      <span class="brand-caption">Студия интерактивных решений</span>
+    </div>
+  </div>
+  <h2 class="descriptor">Делаем ценность <br>вашего продукта <br>очевидной</h2>
+  <a class="home-link" href="../" target="_top">← На главную</a>
+</header>
+<h2 class="directions-title">Выберите своё направление</h2>
+<div class="gallery" id="gallery" aria-label="Вращающаяся галерея направлений"></div><div class="mobile-note">Свайпните, чтобы повернуть галерею</div><div class="hint">← → / свайп / нажмите на карточку</div>
+<nav class="nav" aria-label="Навигация по галерее"><button id="prev" title="Предыдущее направление" aria-label="Предыдущее направление">←</button><div class="nav-label" id="activeName" aria-live="polite"></div><button id="next" title="Следующее направление" aria-label="Следующее направление">→</button></nav>
+<aside class="communication" aria-label="Связаться с Меридиам"><div class="contact-rail" id="contactRail" hidden><button type="button" id="phoneToggle" data-channel="phone" aria-label="Показать номер телефона" aria-expanded="false" aria-controls="contactPanel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 5.2 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L9 10.7a16 16 0 0 0 4.3 4.3l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 2.7 3z"/></svg><span class="contact-label">Номер телефона</span></button><button type="button" data-channel="max" aria-label="Показать MAX" aria-expanded="false" aria-controls="contactPanel"><span class="max-mark" aria-hidden="true">MAX</span><span class="contact-label">Написать в MAX</span></button><button type="button" data-channel="telegram" aria-label="Показать Telegram" aria-expanded="false" aria-controls="contactPanel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7ZM22 2 11 13"/></svg><span class="contact-label">Написать в Telegram</span></button><button type="button" data-channel="email" aria-label="Показать почту" aria-expanded="false" aria-controls="contactPanel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg><span class="contact-label">Написать на почту</span></button></div><button class="contact-toggle" id="contactToggle" aria-label="Показать способы связи" aria-expanded="false" aria-controls="contactRail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5Z"/></svg></button><div class="phone-panel" id="contactPanel" hidden role="region" aria-labelledby="contactTitle"><span id="contactTitle"></span><strong id="contactValue"></strong><button type="button" id="copyContact">Скопировать</button><a id="contactLink">Открыть</a><span id="copyStatus" role="status"></span></div></aside>
+<dialog class="preview" id="preview" aria-labelledby="previewTitle"><button class="close" id="close" aria-label="Закрыть">×</button><div class="preview-inner"><img alt="" id="previewImage"><div class="preview-text"><h2 id="previewTitle"></h2><p id="previewDesc"></p></div></div></dialog></main>
+<script src="v18-app.js"></script><script>
+window.addEventListener('message', event => {
+ if (event.origin !== location.origin || event.source !== window.parent) return;
+ if (event.data?.type === 'meridiam:prepare') document.body.classList.add('transition-prepared');
+ if (event.data?.type === 'meridiam:arrive') document.body.classList.remove('transition-prepared');
+});
+</script><script src="../shared/contacts.js"></script></body></html>

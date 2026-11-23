@@ -1,0 +1,6 @@
+Night-light detail texture
+NASA Earth Observatory — Black Marble 2016, grayscale, global 3 km map.
+Source page: https://science.nasa.gov/earth/earth-observatory/earth-at-night/maps/
+Source image: https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/144000/144897/BlackMarble_2016_3km_gray.jpg
+Original dimensions 13500 × 6750. Local browser texture 8192 × 4096, JPEG quality 94.
+Used as night-time emissive radiance. Retrieved 16.11.2026.

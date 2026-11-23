@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#02060d">
+<meta name="description" content="Меридиам — студия интерактивных решений. Делаем ценность вашего продукта очевидной.">
+<title>Меридиам — студия интерактивных решений</title>
+<style>
+html,body{margin:0;width:100%;height:100%;background:#02060d;overflow:hidden}
+.page{position:absolute;inset:0;width:100%;height:100%;border:0;background:#02060d}
+#second-page{opacity:0;visibility:hidden;transition:opacity var(--gallery-fade,1200ms) cubic-bezier(.4,0,.2,1)}
+body.revealing #second-page,body.gallery #second-page{visibility:visible;opacity:1}
+body.gallery #first-page{visibility:hidden}
+body.reduced #second-page{transition-duration:180ms}
+.status{position:fixed;z-index:3;bottom:24px;left:50%;transform:translateX(-50%);color:#e6f1f8;background:#071420;padding:12px 18px;border-radius:20px;font:14px Arial,sans-serif}
+.status[hidden]{display:none}
+
+.sunrise-light{
+ position:fixed;z-index:2;pointer-events:none;
+ left:var(--sun-x,33%);top:var(--sun-y,29%);
+ width:120px;height:120px;opacity:0;
+ background:radial-gradient(circle,#fff 0%,#fffdf4 10%,#fff2ca 19%,#f8d59b90 34%,#e2c09230 50%,transparent 70%);
+ transform:translate(-50%,-50%) scale(.25);
+ mix-blend-mode:screen;
+}
+.sunrise-light::before,.sunrise-light::after{
+ content:"";position:absolute;inset:49% -60%;
+ background:linear-gradient(90deg,transparent,#fff5d9a0,#fff,#fff5d9a0,transparent);
+ transform:rotate(-42deg);filter:blur(1px)
+}
+.sunrise-light::after{inset:49% -15%;transform:rotate(66deg)}
+.sun-whiteout{
+ position:fixed;z-index:3;inset:0;pointer-events:none;
+ background:#fffdf7;opacity:0;
+}
+body[data-transition="sunrise"].departing .sunrise-light{animation:sun-approach 4.5s both}
+body[data-transition="sunrise"].departing .sun-whiteout{animation:sun-whiteout 4.5s both}
+body[data-transition="orbit"].departing .sunrise-light{animation:orbit-sun 4.4s both}
+@keyframes orbit-sun{
+ 0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}
+ 8%{opacity:.65;transform:translate(-50%,-50%) scale(.6)}
+ 28%,100%{opacity:0;transform:translate(-50%,-50%) scale(.4)}
+}
+@keyframes sun-approach{
+ 0%{opacity:0;transform:translate(-50%,-50%) scale(.25)}
+ 10%{opacity:.8;transform:translate(-50%,-50%) scale(.6)}
+ 38%{opacity:1;transform:translate(-50%,-50%) scale(2.2)}
+ 61%{opacity:1;transform:translate(-50%,-50%) scale(9)}
+ 78%{opacity:.8;transform:translate(-50%,-50%) scale(14)}
+ 100%{opacity:0;transform:translate(-50%,-50%) scale(18)}
+}
+@keyframes sun-whiteout{
+ 0%,43%{opacity:0}
+ 59%,70%{opacity:1}
+ 100%{opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+ body[data-transition="sunrise"].departing .sunrise-light{animation:none}
+ body.reduced .sun-whiteout,body.reduced .sunrise-light{animation:none!important}
+}
+</style>
+<script defer src="transition.js"></script>
+</head>
+<body>
+<iframe class="page" id="first-page" title="Меридиам — Земля" src="first/index.html"></iframe>
+<iframe class="page" id="second-page" title="Меридиам — галерея направлений" src="second/index.html" inert aria-hidden="true"></iframe>
+<div class="sunrise-light" aria-hidden="true"></div>
+<div class="sun-whiteout" aria-hidden="true"></div>
+<p class="status" role="status" hidden>Загружаем галерею…</p>
+</body>
+</html>

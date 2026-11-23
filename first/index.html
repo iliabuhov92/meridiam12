@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#02060d"><meta name="description" content="Меридиам — студия интерактивных решений. Делаем ценность вашего продукта очевидной.">
+<title>Меридиам — студия интерактивных решений</title>
+<link rel="preload" href="meridiam-light.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="style.css?v=type-glow-2"><script defer src="three.min.js"></script><script defer src="frame.js?v=dark-limb-20261113-3"></script>
+<style>.hint,.frame-note,.frame-index{display:none!important}.planet{--diameter:min(78vh,68vw);top:55%}.experience{background:#02060b}.nebula{opacity:.28}@media(max-width:760px){.planet{--diameter:min(100vw,49svh);top:67%}}.sun-flare{position:absolute;z-index:2;left:12%;top:17%;width:160px;height:160px;transform:translate(-50%,-50%);pointer-events:none;background:radial-gradient(circle,#fffef0 0, #fff9da 2%,#ffd69b99 5%,#ffb25d38 14%,#ff941514 32%,transparent 65%)}.sun-flare:before,.sun-flare:after{content:"";position:absolute;inset:48% 0;background:linear-gradient(90deg,transparent,#ffcc8580,#fff9e8,#ffcc8580,transparent);transform:rotate(-42deg);filter:blur(1px)}.sun-flare:after{inset:49% 12%;transform:rotate(66deg)}@media(min-width:761px){.brand,.intro{top:6vh}.intro .fine-line{position:absolute;top:-18px;margin:0}.intro h2{line-height:1.15;padding-top:3px}}.cosmos{background:#010308 url("cosmos-approved.png") center center/cover no-repeat}
+@media(max-width:760px){.cosmos{background-size:auto 100%;background-position:center}}
+/* Visible, slow ice-blue pulse with crisp letter interiors. */
+@keyframes type-breath{
+ 0%,100%{text-shadow:0 0 3px #40baff30,0 0 10px #149aff18;filter:brightness(.94)}
+ 50%{text-shadow:0 0 3px #e0f7ffbb,0 0 10px #80ddffcc,0 0 24px #35baff88,0 0 38px #149aff40;filter:brightness(1.2)}
+}
+.planet-trigger{inset:2%;border-radius:50%}.explore-wrap{width:clamp(300px,38vw,560px);z-index:4;pointer-events:none}.planet.active .explore-wrap{pointer-events:auto}.planet:focus-within:not(.active) .explore-wrap{opacity:0;visibility:hidden;pointer-events:none}.explore{min-height:110px;padding:24px 30px;background:radial-gradient(ellipse,#020b16d9 0%,#03102088 38%,transparent 68%);text-decoration:none}.cosmic-button-aura{position:absolute;pointer-events:none;left:-8%;top:50%;width:116%;height:220%;object-fit:fill;transform:translateY(-50%);animation:cosmic-button-breath 6s ease-in-out infinite}.explore span{font-size:clamp(10px,1.05vw,15px);letter-spacing:.15em;text-shadow:0 0 6px #a6eaff,0 0 15px #269fff;white-space:nowrap}.explore:focus-visible{outline:1px dashed #a5eaff88;outline-offset:4px;border-radius:50%}@keyframes cosmic-button-breath{0%,100%{opacity:.75;filter:brightness(.9)}50%{opacity:1;filter:brightness(1.15)}}@media(max-width:760px){.explore-wrap{width:94%;min-width:0}.explore{min-height:90px;padding:20px 10px}.explore span{font-size:10px;letter-spacing:.09em}}
+
+.explore-wrap{top:66.5%;width:76%;min-width:0}
+.explore{background:transparent;min-height:65px;padding:12px 5px}
+.explore span{font-size:clamp(11px,1.18vw,17px);letter-spacing:.09em;color:#e6f6ff}
+@media(max-width:760px){.explore-wrap{width:80%}.explore span{font-size:13px;letter-spacing:.04em}}
+
+/* Smoked glass: live scene remains visible beneath the graphite tint. */
+.explore-wrap{top:66.5%;width:80%}
+.explore{
+ min-height:clamp(54px,9.8vh,82px);padding:18px 16px;
+ border:1px solid rgba(213,237,248,.52);border-radius:28px;
+ background:linear-gradient(165deg,rgba(199,222,235,.18),rgba(16,24,33,.42) 28%,rgba(5,10,17,.70) 64%,rgba(133,164,183,.18));
+ -webkit-backdrop-filter:blur(7px) saturate(.75);backdrop-filter:blur(7px) saturate(.75);
+ box-shadow:inset 0 1px 2px #f1fbff70,inset 0 -2px 4px #bddeed35,inset 0 0 18px #b7d6e61a,0 8px 22px #0007;
+ transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+}
+.explore::before{content:"";position:absolute;inset:2px;border-radius:inherit;pointer-events:none;background:radial-gradient(ellipse at 9% 0%,#f0fbff70,transparent 28%),radial-gradient(ellipse at 94% 100%,#c0e9ff35,transparent 30%)}
+.explore span{font-family:Meridiam,Arial,sans-serif;font-weight:400;font-size:clamp(10px,1.18vw,17px);letter-spacing:.055em;animation:none;filter:none;text-shadow:0 1px 3px #0009;color:#e6f1f8}
+.explore:focus-visible{outline:2px solid #c8ecff;outline-offset:5px;border-radius:28px;transform:scale(1.03)}
+@media(hover:hover){.explore:hover{transform:scale(1.03);border-color:#e1f4ffb3;box-shadow:inset 0 1px 3px #f1fbff90,inset 0 -2px 5px #bddeed50,inset 0 0 18px #b7d6e625,0 10px 26px #0008}}
+@media(max-width:760px){.explore{min-height:54px;padding:16px 8px;border-radius:19px}.explore span{font-size:clamp(9px,2.7vw,13px);letter-spacing:.025em}}
+</style><style>
+.departing .brand,.departing .intro,.departing .planet,.departing .hint,#meridiam-contact{
+ transition:opacity .65s ease,transform .65s ease;
+}
+.departing .brand,.departing .intro{opacity:0;transform:translateY(-18px)}
+.departing .planet,.departing .hint{opacity:0;pointer-events:none}
+body:has(.departing) #meridiam-contact{opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){
+ .departing .brand,.departing .intro{transform:none}
+}
+</style><style>
+.experience::after{
+ content:"";position:absolute;z-index:3;pointer-events:none;
+ left:0;right:0;top:6%;height:30%;opacity:var(--departure-dawn,0);
+ background:radial-gradient(ellipse 18% 12% at 60% 49%,#e5f5ffb0,transparent 65%),
+ radial-gradient(ellipse 42% 22% at 58% 50%,#77bded40,transparent 75%);
+ mix-blend-mode:screen;
+}
+.departing .cosmos{transform:scale(1.035);transition:transform 4.6s cubic-bezier(.45,0,.3,1)}
+@media(prefers-reduced-motion:reduce){.departing .cosmos{transform:none}}
+</style><style>
+.cosmos::after{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:#00030a;opacity:calc(var(--cinematic-strength,0) * .24);
+}
+.experience::before{
+ content:"";position:absolute;inset:0;z-index:4;pointer-events:none;
+ opacity:var(--cinematic-strength,0);
+ background:radial-gradient(ellipse 78% 90% at 53% 42%,transparent 45%,rgba(0,2,8,.27) 100%);
+}
+.scene{
+ filter:brightness(calc(1 + var(--cinematic-strength,0) * .025));
+}
+</style><link rel="stylesheet" href="../shared/contacts.css"><style>
+body,button,.brand-sub,.intro h2,.intro p,.explore span,.hint,.frame-note,.arrival{
+ font-family:Arial,Helvetica,sans-serif
+}
+.wordmark{font-family:Meridiam,Arial,sans-serif}
+.brand-sub,.intro h2,.intro p,.explore span{text-transform:none;letter-spacing:.015em}
+.intro h2,.explore span{font-weight:600;line-height:1.2}
+.intro p{font-weight:400;line-height:1.55;color:#eaf3fa}
+</style><link rel="stylesheet" href="../shared/typography.css"></head>
+<body>
+<main class="experience" id="experience">
+<div class="cosmos" aria-hidden="true"><canvas id="stars"></canvas></div>
+<header class="brand">
+<h1 class="wordmark">Меридиам</h1>
+<p class="brand-sub"><span></span>Студия интерактивных решений</p>
+</header>
+<section class="intro" aria-label="О студии"><h2>Делаем ценность<br>вашего продукта<br><em>очевидной.</em></h2><p>Создаём интерактивные сайты<br class="desktop-break"> и 3D-презентации, которые привлекают внимание, раскрывают преимущества и помогают бизнесу продавать.</p></section>
+<div class="scene" id="scene" aria-hidden="true"></div>
+<div class="planet" id="planet"><div class="sun-flare" aria-hidden="true"></div>
+<button class="planet-trigger" id="planet-trigger" aria-label="Показать кнопку «Исследовать возможности»" aria-expanded="false"></button>
+<svg class="monogram" viewBox="0 0 1000 1000" aria-hidden="true"><defs><filter id="aura" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="12"/></filter><filter id="core" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3"/></filter><path id="m-path" d="M 259.556 920.889 C 148.444 846.222 88.889 710.222 93.333 564.444 C 92.444 427.556 139.556 275.556 235.556 133.333 L 509.333 456.000 L 782.222 133.333 C 880.889 282.667 918.222 424.000 915.556 564.444 C 915.556 718.222 851.556 856.889 741.333 920.889" stroke-linejoin="miter"/><filter id="mist" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="22"/></filter><linearGradient id="silver" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#a4dbe8" stop-opacity=".8"/><stop offset=".26" stop-color="#91c6db" stop-opacity=".88"/><stop offset=".52" stop-color="#6f94c9" stop-opacity=".60"/><stop offset=".76" stop-color="#9ed6e3" stop-opacity=".8"/><stop offset="1" stop-color="#658cb3" stop-opacity=".55"/></linearGradient><radialGradient id="whisper"><stop stop-color="#9cdfff" stop-opacity=".16"/><stop offset=".28" stop-color="#688bd5" stop-opacity=".07"/><stop offset="1" stop-color="#688bd5" stop-opacity="0"/></radialGradient></defs><g fill="none" stroke-linecap="round"><use href="#m-path" stroke="#6578c4" stroke-width="24" filter="url(#mist)" opacity=".22"/><use href="#m-path" stroke="#5098c2" stroke-width="12" filter="url(#aura)" opacity=".45"/><use href="#m-path" stroke="url(#silver)" stroke-width="4" filter="url(#core)" opacity=".7"/><use href="#m-path" stroke="url(#silver)" stroke-width="2.2"/></g><g fill="url(#whisper)"><circle cx="235.556" cy="133.333" r="70"/><circle cx="782.222" cy="133.333" r="70"/><circle cx="509.333" cy="456" r="60"/></g></svg>
+<div class="explore-wrap" id="explore-wrap"><button class="explore" id="explore"><span>Исследовать возможности</span></button></div>
+</div>
+<div class="hint" id="hint"><span class="hint-orbit"></span><span class="desktop-hint">Наведи курсор на планету</span><span class="touch-hint">Коснись планеты</span></div>
+<div class="loading" id="loading" role="status">Создаём вашу вселенную<span></span></div>
+<div class="arrival" id="arrival" hidden><span class="arrival-kicker">Меридиам</span><p>Возможности ближе,<br>чем кажется.</p><button id="return">Вернуться к планете <span>↗</span></button></div>
+<div class="frame-note" aria-hidden="true">Интерактивное измерение</div><div class="frame-index" aria-hidden="true">01 / ∞</div>
+</main>
+<div id="meridiam-contact"><aside class="communication" aria-label="Связаться с Меридиам"><div class="contact-rail" id="contactRail" hidden><button type="button" id="phoneToggle" data-channel="phone" aria-label="Показать номер телефона" aria-expanded="false" aria-controls="contactPanel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 5.2 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L9 10.7a16 16 0 0 0 4.3 4.3l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 2.7 3z"/></svg><span class="contact-label">Номер телефона</span></button><button type="button" data-channel="max" aria-label="Показать MAX" aria-expanded="false" aria-controls="contactPanel"><span class="max-mark" aria-hidden="true">MAX</span><span class="contact-label">Написать в MAX</span></button><button type="button" data-channel="telegram" aria-label="Показать Telegram" aria-expanded="false" aria-controls="contactPanel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7ZM22 2 11 13"/></svg><span class="contact-label">Написать в Telegram</span></button><button type="button" data-channel="email" aria-label="Показать почту" aria-expanded="false" aria-controls="contactPanel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg><span class="contact-label">Написать на почту</span></button></div><button class="contact-toggle" id="contactToggle" aria-label="Показать способы связи" aria-expanded="false" aria-controls="contactRail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5Z"/></svg></button><div class="phone-panel" id="contactPanel" hidden role="region" aria-labelledby="contactTitle"><span id="contactTitle"></span><strong id="contactValue"></strong><button type="button" id="copyContact">Скопировать</button><a id="contactLink">Открыть</a><span id="copyStatus" role="status"></span></div></aside></div>
+<script src="../shared/contacts.js"></script>
+</body></html>

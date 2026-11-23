@@ -1,0 +1,49 @@
+/* Common contact panel, used on both pages. */
+.communication{font-family:Arial,Helvetica,sans-serif;text-transform:none;letter-spacing:normal}
+.communication *{box-sizing:border-box}
+.communication button,.communication a{font:inherit;cursor:pointer;letter-spacing:normal;text-transform:none}
+
+.communication{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));z-index:60;color:#e4f4ff}
+
+.communication button,.communication a{display:flex;align-items:center;justify-content:center;position:relative;width:48px;height:48px;padding:10px;border:1px solid #c5e6f755;border-radius:50%;background:linear-gradient(145deg,#294052,#0b1724 70%);color:#e8f6ff;box-shadow:inset 0 1px 0 #ecf8ff26,0 7px 20px #0006;text-decoration:none;transition:background .2s,border-color .2s}
+
+.communication button:hover,.communication a:hover{border-color:#bceaff;background:#203a4c}
+.communication svg{width:22px;height:22px}
+.communication .contact-toggle{width:56px;height:56px}
+.contact-toggle[aria-expanded="true"]{border-color:#bceaff;background:#203a4c}
+.contact-rail{position:absolute;bottom:71px;right:-4px;display:flex;flex-direction:column;gap:7px;padding:8px;background:#06121ef5;border:1px solid #94bed052;border-radius:36px;box-shadow:0 10px 35px #0007}
+.contact-rail[hidden]{display:none}
+.max-mark{font-size:10px;font-weight:700;letter-spacing:.03em}
+.contact-label{position:absolute;right:60px;padding:9px 12px;background:#0a1b2b;border:1px solid #94bed052;border-radius:10px;white-space:nowrap;font-size:12px;pointer-events:none;opacity:0;transition:opacity .15s}
+.contact-rail a:hover .contact-label,.contact-rail a:focus-visible .contact-label{opacity:1}
+.communication :focus-visible{outline:2px solid #bceaff;outline-offset:4px}
+
+@media(max-width:600px){.communication{right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom))}
+.contact-label{opacity:1}}
+
+@media(max-height:559px){.communication{bottom:12px;right:12px}
+.contact-rail{bottom:65px;gap:4px;padding:6px}
+.contact-rail a{height:44px;width:44px}}
+
+
+.phone-panel{position:absolute;right:72px;bottom:72px;width:230px;padding:18px;background:#0a1b2b;border:1px solid #94bed066;border-radius:18px;box-shadow:0 12px 35px #0008;display:flex;flex-direction:column;gap:12px}
+.phone-panel[hidden]{display:none}
+.phone-panel>span{font-size:12px;color:#bfd4e3}
+.phone-panel strong{font-size:19px;white-space:nowrap;user-select:text}
+.communication .phone-panel button{width:100%;height:44px;border-radius:12px;font-size:12px}
+.phone-panel #copyStatus:empty{display:none}
+.contact-rail button:hover .contact-label,.contact-rail button:focus-visible .contact-label{opacity:1}
+.communication:has(.phone-panel:not([hidden])) .contact-label{opacity:0}
+@media(max-width:360px){.phone-panel{width:210px;right:64px;padding:14px}}
+
+.contact-label,.communication button,.communication a{font-family:Arial,Helvetica,sans-serif}
+
+.communication button,.communication a,.phone-panel>span,.phone-panel strong{font-family:Arial,Helvetica,sans-serif}
+
+.phone-panel{width:min(280px,calc(100vw - 112px));box-sizing:border-box}
+
+.phone-panel strong{font-size:16px;line-height:1.5;white-space:normal;overflow-wrap:anywhere;color:#fff;font-weight:500}
+
+.communication .phone-panel a{width:100%;height:44px;box-sizing:border-box;border-radius:12px;font-size:13px;padding:8px}
+
+.communication:has(.phone-panel:not([hidden])) .contact-label{opacity:0}

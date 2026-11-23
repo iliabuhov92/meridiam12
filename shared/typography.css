@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Meridiam Text";
+  src: url("../first/meridiam-light.ttf") format("truetype");
+  font-weight: 100 400;
+  font-display: swap;
+  unicode-range: U+0000-002F, U+003A-10FFFF;
+}
+@font-face {
+  font-family: "Meridiam Text";
+  src: url("../first/meridiam-regular.ttf") format("truetype");
+  font-weight: 500 900;
+  font-display: swap;
+  unicode-range: U+0000-002F, U+003A-10FFFF;
+}
+body, button, a, .brand-caption, .topline .descriptor, .card .content,
+.card .hover-desc, .nav-label, .hint, .mobile-note, .preview-text h2,
+.preview-text p, .home-link, .directions-title, .brand-sub, .intro h2,
+.intro p, .explore span, .frame-note, .arrival, .communication button,
+.communication a, .phone-panel > span, .phone-panel strong {
+  font-family: "Meridiam Text", Arial, Helvetica, sans-serif;
+}
